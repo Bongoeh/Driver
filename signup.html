@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="form.css">
+    <style>
+        .show-password-container {
+            display: flex;
+            justify-content: center; /* Center the checkbox and label */
+            align-items: center; /* Aligns checkbox and text vertically */
+            margin-top: 10px; /* Space above the checkbox */
+        }
+
+        .show-password-container input[type="checkbox"] {
+            width: 16px; /* Smaller size for the checkbox */
+            height: 16px; /* Smaller size for the checkbox */
+            margin: 5px; /* Space between checkbox and text */
+        }
+
+        .show-password-label {
+            font-size: 14px; /* Adjust the font size as needed */
+            color: crimson; /* Match the color with your theme */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="bookingcontainer">
+        <form class="form" onsubmit="registerUser(event)">
+            <h2>Sign Up</h2>
+            <input type="text" id="Name" placeholder="Enter your Name" required /><br>
+            <br>
+            <input type="text" id="userName" placeholder="Enter your username" required /><br>
+            <br>
+            <input type="email" id="email" placeholder="Enter your email" required /><br>
+            <br>
+            <input type="password" id="password" placeholder="Enter your password" required /><br>
+            <br>
+            <div class="expected-credentials">
+                <p style="color: white; text-align: center;">Password: At least <strong>8 characters</strong></p>
+            </div>
+            <div class="show-password-container">
+                <input type="checkbox" id="show-password" onclick="togglePassword()">
+                <label for="show-password" class="show-password-label">Show Password</label>
+            </div>
+            <input type="submit" class="submit-btn" value="Sign Up" /><br>
+
+            <div class="signup-link">
+                <a href="login.html">Have an account? LogIn here</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('show-password');
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+        }
+
+        function registerUser(event) {
+            event.preventDefault();  // Prevent form from refreshing the page
+            
+            var userName = document.getElementById("userName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Validate input
+            if (userName === "" || email === "" || password === "") {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Check if the password meets the minimum length requirement
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+
+            // Store user credentials in localStorage
+            localStorage.setItem('username', userName);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            alert('Sign up successful! You can now log in.');
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: url('./Images/my website 2.jpg') no-repeat center center/cover; /* Adjusted for better background */
+    font-family: 'Roboto', sans-serif;
+}
+
+nav.menu-bar {
+    width: 100%; /* Full width for the navigation */
+    background-color: rgba(255, 255, 255, 0.8); /* Background for visibility */
+    padding: 10px 0; /* Padding for spacing */
+    position: absolute; /* Position it at the top */
+    top: 0; /* Align to top */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+nav.menu-bar ul {
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    list-style-type: none; /* Remove default list styling */
+}
+
+nav.menu-bar li {
+    margin: 0 15px; /* Spacing between nav items */
+}
+
+nav.menu-bar a {
+    text-decoration: none;
+    color: crimson; /* Link color */
+}
+
+.bookingcontainer {
+    display: flex;
+    justify-content: center; /* Center the form */
+    align-items: center; /* Center the form vertically */
+    width: 100%; /* Ensure full width for centering */
+    padding: 20px;
+}
+
+.form {
+    width: 400px; /* Adjust width as needed */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: crimson;
+}
+
+input,
+.submit-btn {
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 20px auto; /* Centered by auto margins */
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: rgba(0, 0, 0, 0.993);
+    padding: 15px;
+    transition: .5s;
+    text-transform: capitalize;
+}
+
+input::placeholder {
+    color: crimson;
+}
+
+input:focus,
+.submit-btn:hover {
+    background: white;
+    color: black;
+}
+
+.submit-btn {
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: 50px auto 0; /* Centered by auto margins */
+}
+
+.signup-link,
+.login-link { /* Added login-link class */
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: crimson;
+}
+
+.signup-link a,
+.login-link a { /* Styled login link */
+    color: crimson;
+}
+
+.signup-link a:hover,
+.login-link a:hover { /* Styled hover for both links */
+    text-decoration: underline;
+}

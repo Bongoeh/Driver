@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Bookings</title>
+    <style>
+        /* Styles for the admin page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .admin-container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: crimson;
+        }
+
+        #bookingList {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin - Current Bookings</h1>
+        <div id="bookingList">
+            <h2>Bookings List</h2>
+            <ul id="bookings"></ul>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js"></script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        import { getDatabase } from "firebase/database";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDUMzqCwcrtg2VR_CzQVF4tYvdm_5JOI3U",
+            authDomain: "siyadriving-51555.firebaseapp.com",
+            projectId: "siyadriving-51555",
+            storageBucket: "siyadriving-51555.appspot.com",
+            messagingSenderId: "172154393818",
+            appId: "1:172154393818:web:c973f34c752e33a08641e3",
+            measurementId: "G-5XFRN4F84C"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase(app); // Initialize database
+
+        // Function to get current bookings
+        function getBookings() {
+            const bookingsList = document.getElementById('bookings');
+            bookingsList.innerHTML = ''; // Clear existing bookings
+
+            database.ref('bookings/').on('value', (snapshot) => {
+                snapshot.forEach((childSnapshot) => {
+                    const booking = childSnapshot.val();
+                    const li = document.createElement('li');
+                    li.textContent = `${booking.name} - ${booking.email} - ${booking.phone} - ${booking.date} - ${booking.time} - ${booking.codeType}`;
+                    bookingsList.appendChild(li);
+                });
+            });
+        }
+
+        // Call getBookings to fetch and display bookings on page load
+        getBookings();
+    </script>
+</body>
+</html>
+

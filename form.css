@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: url('./Images/Siya\ image.jpeg') no-repeat center center/cover; /* Adjusted for better background */
+    font-family: 'Roboto', sans-serif;
+}
+
+nav.menu-bar {
+    width: 100%; /* Full width for the navigation */
+    background-color: rgba(255, 255, 255, 0.8); /* Background for visibility */
+    padding: 10px 0; /* Padding for spacing */
+    position: absolute; /* Position it at the top */
+    top: 0; /* Align to top */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+nav.menu-bar ul {
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    list-style-type: none; /* Remove default list styling */
+}
+
+nav.menu-bar li {
+    margin: 0 15px; /* Spacing between nav items */
+}
+
+nav.menu-bar a {
+    text-decoration: none;
+    color: crimson; /* Link color */
+}
+
+.bookingcontainer {
+    display: flex;
+    justify-content: left; /* Center the form */
+    align-items: center; /* Center the form vertically */
+    width: 90%; /* Ensure full width for centering */
+    padding: 20px;
+}
+
+.form {
+    width: 400px; /* Adjust width as needed */
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(214, 209, 210);
+    
+}
+
+h2 {
+    text-align: center;
+    color: crimson;
+}
+
+input,
+.submit-btn {
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 20px auto; /* Centered by auto margins */
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: crimson;
+    padding: 15px;
+    transition: .5s;
+    text-transform: capitalize;
+}
+
+input::placeholder {
+    color: crimson;
+}
+
+input:focus,
+.submit-btn:hover {
+    background: rgb(54, 51, 51);
+    color: crimson;
+}
+
+.submit-btn {
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: 50px auto 0; /* Centered by auto margins */
+}
+
+
+.signup-link {
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: crimson;
+}
+
+.signup-link a {
+    color: crimson;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.alert-box {
+    background-color: black; /* Background color black */
+    color: white; /* Text color white */
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+.alert-box.show {
+    display: block; /* Show when triggered */
+}
+
+.alert {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.login-link {
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: crimson;
+}
+
+.login-link a {
+    color: crimson;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.logout-container h1{
+color: crimson;
+}
+
+.logout-container p{
+    color: crimson;
+    }
+

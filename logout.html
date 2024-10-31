@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="form.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="logout-container">
+        <h1>Logging Out...</h1>
+        <p>Please wait while we log you out.</p>
+    </div>
+
+    <script>
+        // Clear user session data
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+
+        // Redirect to home page after logging out
+        setTimeout(() => {
+            window.location.href = 'index.html'; // Redirect to home page
+        }, 2000); // Redirect after 2 seconds
+    </script>
+</body>
+</html>

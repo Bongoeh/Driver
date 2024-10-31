@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My website</title>
+    
+   <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDUMzqCwcrtg2VR_CzQVF4tYvdm_5JOI3U",
+            authDomain: "siyadriving-51555.firebaseapp.com",
+            projectId: "siyadriving-51555",
+            storageBucket: "siyadriving-51555.appspot.com",
+            messagingSenderId: "172154393818",
+            appId: "1:172154393818:web:c973f34c752e33a08641e3",
+            measurementId: "G-5XFRN4F84C"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+</head>
+<body>
+   <!-- Header Section --> 
+<section id="header">
+    <div class="header container">
+        <div class="nav-bar">
+            <div class="brand"><a href="#hero"><h1><span>S</span>iya <span>D</span>river <span>T</span>raining</h1></a>
+            </div>
+           <div class="nav-list">
+            <div class="hamburger" id="hamburger"><div class="bar"></div></div>
+            <ul>
+                <li><a href="#hero" data-after="Home">Home</a></li>
+                <li><a href="#services" data-after="Service">Services</a></li>
+                <li><a href="#projects" data-after="Project">Project</a></li>
+                <li><a href="#about" data-after="About">About</a></li>
+                <li><a href="#contact" data-after="Contact">Contact</a></li>
+                <li><a href="booking.html" data-after="Booking">Booking</a></li>
+                <li><a href="login.html" data-after="Login">Login</a></li>
+                <li><a href="signup.html" data-after="SignUp">SignUp</a></li>
+            </ul>
+           </div> 
+        </div>
+    </div>
+</section>
+   <!-- End Header Section --> 
+
+   <!-- Hero Section -->
+   <section id="hero">
+    <div class="hero container">
+        <div>
+            <h1>Welcome, <span></span></h1>
+            <h1>to our driver training <span></span></h1>
+            <h1>Siya Driver Training <span></span></h1>
+            <a href="#projects" type="button" class="cta">PDF</a>
+        </div>
+    </div>
+   </section>
+   <!-- End Hero Section -->
+
+   <!--Service Section-->
+   <section id="services">
+    <div class="services container">
+        <div class="service-top">
+            <h1 class="section-title">Serv<span>i</span>ces</h1>
+            <p>Siya Driver Training is a leading driving school in Durban. We offer driving lessons from code 08 to code 14, and after licence courses in Durban. </p>
+        </div>
+        <div class="service-bottom">
+            <div class="service-item">
+                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png"/></div>
+                <h2>Code 08 K53 Driving Lessons</h2>
+                <p>Allows you to drive a vehicle less than 3500kg with a trailer less than 750kg.</p>
+            </div>
+            
+            <div class="service-item">
+                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png"/></div>
+                <h2>Code 10 K53 Driving Lessons</h2>
+                <p>Allows you to drive a vehicle over 1600kg. The trailer must not be over 750kg.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png"/></div>
+                <h2>Code EC(14) K53 Driving Lessons</h2>
+                <p>Allows you to drive a vehicle over 1600kg, that has trailer over 750kg. Code EC also legally allows you to drive code B(08), Code EC1(10) and Code C(11) vehicle with or without a trailer.</p>
+            </div>
+        </div>
+    </div>
+   </section>
+   <!-- End Service Section-->
+
+   <!-- Project Section-->
+   <section id="projects">
+    <div class="projects container">
+        <div class="projects-header">
+            <h1 class="section-title">Recent <span>Projects</span></h1>
+        </div>
+        <div class="all-projects">
+            <div class="project-item">
+                <div class="project-info">
+                    <h1>Project 1</h1>
+                    <h2>Driving is love</h2>
+                    <p>Siya is a well established driving school which in we dive deep into details on how we use our cars in a good way or in a bad way you might think that you have it all. Come and join us on our driving journey and let us avoid unneccesary accidents. We do Leanerns for biggeners and license we offer code 08 to code 14. Why not start that journey you always want to start</p>
+                </div>
+
+                <div class="project-img">
+                    <img src="./Images/my website 3.jpeg" alt="img">
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h1>Project 2</h1>
+                    <h2>Driving is love</h2>
+                    <p>Siya is a well established driving school which in we dive deep into details on how we use our cars in a good way or in a bad way you might think that you have it all. Come aqnd join us on our driving journey and let us avoid unneccesary accidents. We do Leanerns for biggeners and license we offer code 10 to code 14. Why not start that journey you always want to start</p>
+                </div>
+
+                <div class="project-img">
+                    <img src="./Images/my website 3.jpeg" alt="img">
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h1>Project 3</h1>
+                    <h2>Driving is love</h2>
+                    <p>Siya is a well established driving school which in we dive deep into details on how we use our cars in a good way or in a bad way you might think that you have it all. Come aqnd join us on our driving journey and let us avoid unneccesary accidents. We do Leanerns for biggeners and license we offer code 10 to code 14. Why not start that journey you always want to start</p>
+                </div>
+
+                <div class="project-img">
+                    <img src="./Images/my website 3.jpeg" alt="img">
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h1>Project 4</h1>
+                    <h2>Driving is love</h2>
+                    <p>Siya is a well established driving school which in we dive deep into details on how we use our cars in a good way or in a bad way you might think that you have it all. Come aqnd join us on our driving journey and let us avoid unneccesary accidents. We do Leanerns for biggeners and license we offer code 10 to code 14. Why not start that journey you always want to start</p>
+                </div>
+
+                <div class="project-img">
+                    <img src="./Images/my website 3.jpeg" alt="img">
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h1>Project 5</h1>
+                    <h2>Driving is love</h2>
+                    <p>Siya is a well established driving school which in we dive deep into details on how we use our cars in a good way or in a bad way you might think that you have it all. Come aqnd join us on our driving journey and let us avoid unneccesary accidents. We do Leanerns for biggeners and license we offer code 10 to code 14. Why not start that journey you always want to start</p>
+                </div>
+
+                <div class="project-img">
+                    <img src="./Images/my website 3.jpeg" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+   <!-- End Project Section-->
+   
+   <!-- About Section-->
+   <section id="about">
+    <div class="about container">
+        <div class="col-left">
+            <div class="about-img">
+                <img src="./Images/my website 4.webp" alt="img">
+            </div>
+        </div>
+        <div class="col-right">
+            <h1 class="section-title">About <span>Us</span></h1>
+            <h2>Front End Developer</h2>
+            <p>edfghjhsdtewfdweswdu dsinwifhedwijfnwid wicbewudhiasdcdsjc dsjcidwhweiu9</p>
+            <a href="a" class="cta">Download our pdf</a>
+        </div>
+    </div>
+   </section>
+    <!-- End About Section-->
+
+<!--Booking Section-->
+
+<!-- <section id="bookings">
+    <div class="booking container">
+        <div class="col-left">
+        <div><h1 class="section-title">Booking <span>Info</span></h1></div></div>
+        <form action="submit_booking.php" method="post">
+            <div class="form-group">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <button type="submit" class="cta">Book Now</button>
+        </form>
+    </div>
+    
+</section> -->
+
+<!--End Booking Section-->
+
+<!--End Sign Up-->
+      <!-- Contact Section-->
+      <section id="contact">
+        <div class="contact container">
+            <div><h1 class="section-title">Contact <span>Info</span></h1></div>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png"/></div>
+                    <div class="contact-info">
+                        <h1>Phone</h1>
+                        <h2>076 432 0923</h2>
+                        <h2>082 954 5559</h2>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png"/></div>
+                    <div class="contact-info">
+                        <h1>Email</h1>
+                        <h2>bongoehn@gmail.com</h2>
+                        <h2>busimqamu@gmail.com</h2>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png"/></div>
+                    <div class="contact-info">
+                        <h1>Address</h1>
+                        <h2>Durban</h2>
+                        <h2>PMB</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </section>
+      <!-- End Contact Section-->
+
+      <!-- Footer Section-->
+      <section id="footer">
+        <div class="footer container">
+            <div class="brand"><h1><span>S</span>iya <span>D</span>river <span>T</span>raining</h1></div>
+            <h2>Visit Us On Insta and Facebook</h2>
+            <div class="social-icon">
+                <div class="social-item">
+                    <a href="https://www.facebook.com/p/SIYA-Driver-Training-100067124468487/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
+                </div>
+
+                <div class="social-item">
+                    <a href="https://www.instagram.com/siya_driving_school/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png"/></a>
+                </div>
+            </div>
+            <p>Copyright ⓒ 2024 SiyaDriverTraining. All rights reserved</p>
+        </div>
+      </section>
+
+
+      <!-- End Footer Section-->
+      <script type="module" src="./app.js"></script>
+</body>
+</html>
+

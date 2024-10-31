@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Book Your Spot</title>
+    <link rel="stylesheet" href="form.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Styles for the booking page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bookingcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        form {
+            width: 400px;
+            padding: 20px;
+            background-color: white; /* White background for form */
+            border: 1px solid rgb(211, 190, 194);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: crimson; /* Title color */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333; /* Darker label color */
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid rgb(184, 162, 166);
+        }
+
+        button.cta {
+            background-color: crimson;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button.cta:hover {
+            background-color: darkred; /* Darker red on hover */
+        }
+
+        a.link {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #f0ebeb;
+            text-decoration: none;
+        }
+
+        a.link:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="bookingcontainer">
+        <form id="bookingForm">
+            <h1 class="section-title">Please Book Your Spot</h1>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="codeType">Code Type:</label>
+                <select id="codeType" name="codeType" required>
+                    <option value="">Select Code Type</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <button type="submit" class="cta">Book Now</button>
+            <a href="admin.html" class="link">Admin View Bookings</a> <!-- Link to admin page -->
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js"></script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        import { getDatabase } from "firebase/database";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDUMzqCwcrtg2VR_CzQVF4tYvdm_5JOI3U",
+            authDomain: "siyadriving-51555.firebaseapp.com",
+            projectId: "siyadriving-51555",
+            storageBucket: "siyadriving-51555.appspot.com",
+            messagingSenderId: "172154393818",
+            appId: "1:172154393818:web:c973f34c752e33a08641e3",
+            measurementId: "G-5XFRN4F84C"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase(app); // Initialize database
+
+        // Function to submit booking
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const codeType = document.getElementById('codeType').value;
+
+            // Save booking to Firebase
+            const newBookingRef = database.ref('bookings/').push();
+            newBookingRef.set({
+                name: name,
+                email: email,
+                phone: phone,
+                date: date,
+                time: time,
+                codeType: codeType
+            }).then(() => {
+                alert('Booking successfully made!');
+                document.getElementById('bookingForm').reset(); // Reset the form
+            }).catch((error) => {
+                console.error('Error saving booking:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+
